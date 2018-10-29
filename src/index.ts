@@ -1,1 +1,3 @@
-export * from './AwesomeLibrary';
+export * from './ConsoleLogger';
+export * from './ILogger';
+export * from './LoggerFactory';

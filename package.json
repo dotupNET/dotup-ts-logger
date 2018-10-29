@@ -1,7 +1,7 @@
 {
-  "name": "dotup-ts-library-template",
-  "version": "0.0.13",
-  "description": "template for typescript libraries",
+  "name": "dotup-ts-logger",
+  "version": "0.0.1",
+  "description": "Logger interface",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dotupNET/dotup-ts-library-template.git"
+    "url": "git+https://github.com/dotupNET/dotup-ts-logger.git"
   },
   "keywords": [
     "typescript",
@@ -27,14 +27,15 @@
   "author": "Peter Ullrich",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dotupNET/dotup-ts-library-template/issues"
+    "url": "https://github.com/dotupNET/dotup-ts-logger/issues"
   },
-  "homepage": "https://github.com/dotupNET/dotup-ts-library-template#readme",
+  "homepage": "https://github.com/dotupNET/dotup-ts-logger#readme",
   "devDependencies": {
     "@types/jest": "^23.3.8",
     "gh-pages": "^2.0.1",
     "jasmine": "^3.3.0",
     "jasmine-ts": "^0.3.0",
+    "rimraf": "^2.6.2",
     "ts-node": "^7.0.1",
     "typedoc": "^0.13.0",
     "typescript": "^3.1.3"
