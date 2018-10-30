@@ -1,26 +1,26 @@
 import { ILogger } from "./ILogger";
 
 export class ConsoleLogger implements ILogger {
-  constructor(private name: string) { }
+  constructor(private loggerName: string) { }
 
   debug(message: string) {
-    this.log(message, 'debug', name);
+    this.log(message, 'debug', this.loggerName);
   }
 
   info(message: string) {
-    this.log(message, 'info', name);
+    this.log(message, 'info', this.loggerName);
   }
 
   warn(message: string) {
-    this.log(message, 'warn', name);
+    this.log(message, 'warn', this.loggerName);
   }
 
   error(message: string) {
-    this.log(message, 'error', name);
+    this.log(message, 'error', this.loggerName);
   }
 
-  log(message: string, level: string, name: string) {
-    console.log(`${name} - ${level} - ${message}`);
+  log(message: string, level: string, loggerName: string) {
+    console.log(`${loggerName} - ${level} - ${message}`);
   }
 
 }
