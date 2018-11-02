@@ -1,10 +1,11 @@
 {
   "name": "dotup-ts-logger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Logger interface",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "release": "npm run test && git push && npm run gh-pages && npm publish",
     "clean-dist": "rimraf dist",
     "build": "rimraf dist && tsc",
     "test": "jasmine-ts",

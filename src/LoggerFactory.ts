@@ -1,10 +1,10 @@
 import { ILogger } from "./ILogger";
-import { ConsoleLogger } from "./ConsoleLogger";
+import { Logger } from "./Logger";
 
 export class LoggerFactory {
 
-  CreateDebugLogger(name: string): ILogger {
-    return new ConsoleLogger(name);
+  CreateLogger(name: string): ILogger {
+    return new Logger(name);
   }
 
 }
