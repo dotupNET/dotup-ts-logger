@@ -1,5 +1,5 @@
 // import { ConsoleLogWriter } from "./ConsoleLogWriter";
-// import { LoggerManager } from "./Loggermanager";
+// import { LoggerManager } from "./LoggerManager";
 // import { LoggerFactory } from "./LoggerFactory";
 // import { LogLevel } from "./LogLevelEnum";
 

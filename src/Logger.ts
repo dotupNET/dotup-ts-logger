@@ -1,6 +1,6 @@
 import { ILogger } from "./ILogger";
 import { LogEntry } from "./ILogEntry";
-import { LoggerManager } from "./Loggermanager";
+import { LoggerManager } from "./LoggerManager";
 import { LogLevel } from "./LogLevelEnum";
 
 export class Logger implements ILogger {
