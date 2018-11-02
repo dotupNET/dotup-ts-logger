@@ -29,11 +29,11 @@ export class LoggerManager {
   // public static set Factory(value: ILoggerFactory) {
   // }
 
-  public static AttachLogWriter(logger: ILogWriter) {
+  public AttachLogWriter(logger: ILogWriter) {
     LoggerManager.logWriter.push(logger);
   }
 
-  public static DetachLogWriter(logger: ILogWriter) {
+  public DetachLogWriter(logger: ILogWriter) {
     var index = LoggerManager.logWriter.indexOf(logger);
     if (index > -1) {
       LoggerManager.logWriter.splice(index, 1);
