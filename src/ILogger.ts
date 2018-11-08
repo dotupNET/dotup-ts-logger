@@ -6,7 +6,8 @@ export interface ILogger {
   warn(message: string, memberName?: string): void;
   error(exception: Error, memberName?: string): void;
   // log(message: string, level: string, name: string): void;
-  log(level: LogLevel, message: string, memberName: string, error: Error) : void;
-  
+  call(memberName: string): void;
+  log(level: LogLevel, message: string, memberName: string, error: Error): void;
+
 
 }

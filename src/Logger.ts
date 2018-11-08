@@ -43,4 +43,9 @@ export class Logger implements ILogger {
   public warn(message: string, memberName: string = ""):void{
     this.log(LogLevel.Warn, message, memberName);
   }
+
+  call(memberName: string, logLevel = LogLevel.Info): void {
+    this.log(logLevel, '', memberName);
+  }
+
 }
