@@ -1,5 +1,5 @@
 import { LogLevel } from "./LogLevelEnum";
-import { LogEntry } from "./ILogEntry";
+import { LogEntry } from "./LogEntry";
 
 export interface ILogWriter {
 

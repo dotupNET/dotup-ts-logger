@@ -1,5 +1,5 @@
 import { ILogWriter } from "./ILogWriter";
-import { LogEntry } from "./ILogEntry";
+import { LogEntry } from "./LogEntry";
 import { LogLevel } from "./LogLevelEnum";
 
 export class ConsoleLogWriter implements ILogWriter {

@@ -1,5 +1,5 @@
 import { ILogger } from "./ILogger";
-import { LogEntry } from "./ILogEntry";
+import { LogEntry } from "./LogEntry";
 import { LoggerManager } from "./LoggerManager";
 import { LogLevel } from "./LogLevelEnum";
 
@@ -11,13 +11,10 @@ export class Logger implements ILogger {
 
   Source: string;
 
-
   public constructor(loggerName: string) {
     this.loggerName = loggerName;
     this.loggingAction = LoggerManager.LogToWriter;
   }
-
-
 
   public log(level: LogLevel, message: string, memberName: string, error: Error = null) {
     let entry = new LogEntry(level, message, this.loggerName);
