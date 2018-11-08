@@ -20,7 +20,7 @@ export class Logger implements ILogger {
 
 
   public log(level: LogLevel, message: string, memberName: string, error: Error = null) {
-    let entry = new LogEntry(level, message.toString(), this.loggerName);
+    let entry = new LogEntry(level, message, this.loggerName);
     entry.timeStamp = new Date(Date.now()).toISOString();
     entry.memberName = memberName;
     entry.exception = error;
