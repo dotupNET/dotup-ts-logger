@@ -8,7 +8,7 @@ export class ConsoleLogWriter implements ILogWriter {
 
   write(entry: LogEntry): void {
     const level = LogLevel[entry.logLevel];
-    console.log(`${entry.timeStamp} - ${entry.context} - ${level} - ${entry.message}`);
+    console.log(`${entry.timeStamp} - ${entry.context}:${entry.memberName} - ${entry.message} - ${level}`);
   }
 
 }
