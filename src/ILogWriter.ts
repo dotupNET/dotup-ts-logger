@@ -3,7 +3,7 @@ import { LogEntry } from "./LogEntry";
 
 export interface ILogWriter {
 
-  logLevel: LogLevel;
+  LogLevel: LogLevel;
 
-  write(entry: LogEntry): void;
+  Write(entry: LogEntry): void;
 }

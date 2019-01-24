@@ -1,32 +1,34 @@
-// import { ConsoleLogWriter } from "./ConsoleLogWriter";
-// import { LoggerManager } from "./LoggerManager";
-// import { LoggerFactory } from "./LoggerFactory";
-// import { LogLevel } from "./LogLevelEnum";
+import { ConsoleLogWriter } from "./ConsoleLogWriter";
+import { LoggerManager } from "./LoggerManager";
+import { LoggerFactory } from "./LoggerFactory";
+import { LogLevel } from "./LogLevelEnum";
 
-// class LoggerTest {
+class LoggerTest {
 
-//   DoIt() {
+  DoIt() {
 
-//     const conso = new ConsoleLogWriter();
-//     conso.logLevel = LogLevel.Debug |
-//     LogLevel.Info |
-//     LogLevel.Warn |
-//     LogLevel.Error |
-//     LogLevel.Fatal;
-//     LoggerManager.AttachLogWriter(conso);
+    const conso = new ConsoleLogWriter();
+    conso.LogLevel = LogLevel.Debug |
+    LogLevel.Info |
+    LogLevel.Warn |
+    LogLevel.Error |
+    LogLevel.Fatal;
 
-//     const f = new LoggerFactory();
-//     const logger = f.CreateLogger("Test");
+    const lm = new LoggerManager();
+    lm.AttachLogWriter(conso);
 
-//     logger.debug("DEBBBUUUG");
-//     logger.error(new Error("OHA"));
-//     logger.info('infooooo');
-//     // logger.log('');
-//     logger.warn('warning');
+    const f = new LoggerFactory();
+    const logger = f.CreateLogger("Test");
 
-//   }
+    logger.Debug("DEBBBUUUG");
+    logger.Error(new Error("OHA"));
+    logger.Info('infooooo');
+    // logger.log('');
+    logger.Warn('warning');
 
-// }
+  }
 
-// const test = new LoggerTest();
-// test.DoIt();
+}
+
+const test = new LoggerTest();
+test.DoIt();

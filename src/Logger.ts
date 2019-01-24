@@ -13,10 +13,10 @@ export class Logger implements ILogger {
 
   public constructor(loggerName: string) {
     this.loggerName = loggerName;
-    this.loggingAction = LoggerManager.LogToWriter;
+    this.loggingAction = LoggerManager.writeLogEntry;
   }
 
-  public log(level: LogLevel, message: string, memberName: string, error: Error = null) {
+  public Log(level: LogLevel, message: string, memberName: string, error: Error = null) {
     let entry = new LogEntry(level, message, this.loggerName);
     entry.timeStamp = new Date(Date.now()).toISOString();
     entry.memberName = memberName;
@@ -25,24 +25,24 @@ export class Logger implements ILogger {
     this.loggingAction(entry);
   }
 
-  public debug(message: string, memberName: string = ""):void {
-    this.log(LogLevel.Debug, message, memberName);
+  public Debug(message: string, memberName: string = ""):void {
+    this.Log(LogLevel.Debug, message, memberName);
   }
 
-  public error(exception: Error, memberName: string = "") :void{
-    this.log(LogLevel.Error, exception.message, memberName);
+  public Error(exception: Error, memberName: string = "") :void{
+    this.Log(LogLevel.Error, exception.message, memberName);
   }
 
-  public info(message: string, memberName: string = ""):void {
-    this.log(LogLevel.Info, message, memberName);
+  public Info(message: string, memberName: string = ""):void {
+    this.Log(LogLevel.Info, message, memberName);
   }
 
-  public warn(message: string, memberName: string = ""):void{
-    this.log(LogLevel.Warn, message, memberName);
+  public Warn(message: string, memberName: string = ""):void{
+    this.Log(LogLevel.Warn, message, memberName);
   }
 
-  call(memberName: string, logLevel = LogLevel.Info): void {
-    this.log(logLevel, '', memberName);
+  public CallInfo(memberName: string, logLevel = LogLevel.Info): void {
+    this.Log(logLevel, '', memberName);
   }
 
 }

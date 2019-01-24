@@ -4,7 +4,7 @@ import { LogLevel } from "./LogLevelEnum";
 
 export class LoggerManager {
 
-  private static logWriter: Array<ILogWriter> = new Array<ILogWriter>();
+  static LogWriter: Array<ILogWriter> = new Array<ILogWriter>();
 
   //       /* static */ constructor() {
 
@@ -29,14 +29,14 @@ export class LoggerManager {
   // public static set Factory(value: ILoggerFactory) {
   // }
 
-  public AttachLogWriter(logger: ILogWriter) {
-    LoggerManager.logWriter.push(logger);
+  public AttachLogWriter(logger: ILogWriter): void {
+    LoggerManager.LogWriter.push(logger);
   }
 
-  public DetachLogWriter(logger: ILogWriter) {
-    var index = LoggerManager.logWriter.indexOf(logger);
+  public DetachLogWriter(logger: ILogWriter):void {
+    var index = LoggerManager.LogWriter.indexOf(logger);
     if (index > -1) {
-      LoggerManager.logWriter.splice(index, 1);
+      LoggerManager.LogWriter.splice(index, 1);
     }
   }
 
@@ -44,13 +44,13 @@ export class LoggerManager {
     return ((level1 & level2) == level2);
   }
 
-  public static LogToWriter(message: LogEntry) {
-    const writers = LoggerManager.logWriter.filter(item => {
-      return LoggerManager.IsLevel(item.logLevel, message.logLevel);
+  public static writeLogEntry(message: LogEntry): void {
+    const writers = LoggerManager.LogWriter.filter(item => {
+      return LoggerManager.IsLevel(item.LogLevel, message.logLevel);
     });
     writers.forEach(element => {
       try {
-        element.write(message);
+        element.Write(message);
       } catch (error) {
         console.error(error.message);
       }

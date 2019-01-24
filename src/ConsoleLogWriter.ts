@@ -4,9 +4,9 @@ import { LogLevel } from "./LogLevelEnum";
 
 export class ConsoleLogWriter implements ILogWriter {
 
-  logLevel: LogLevel;
+  LogLevel: LogLevel;
 
-  write(entry: LogEntry): void {
+  Write(entry: LogEntry): void {
     const level = LogLevel[entry.logLevel];
     console.log(`${entry.timeStamp} - ${entry.context}:${entry.memberName} - ${entry.message} - ${level}`);
   }
