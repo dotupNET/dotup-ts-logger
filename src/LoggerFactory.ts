@@ -2,9 +2,9 @@ import { ILogger } from "./ILogger";
 import { Logger } from "./Logger";
 import { LoggerManager } from "./LoggerManager";
 
-export class LoggerFactory {
+export namespace LoggerFactory {
 
-  CreateLogger(name: string): ILogger {
+  export function createLogger(name: string): ILogger {
     const newLogger = new Logger(name);
     return newLogger;
   }

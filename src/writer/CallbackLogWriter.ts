@@ -1,6 +1,6 @@
-import { ILogWriter } from "./ILogWriter";
-import { LogEntry } from "./LogEntry";
-import { LogLevel } from "./LogLevelEnum";
+import { LogEntry } from "../LogEntry";
+import { LogLevel } from "../LogLevelEnum";
+import { ILogWriter } from './ILogWriter';
 
 export class CallbackLogWriter implements ILogWriter {
 

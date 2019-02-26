@@ -24,18 +24,6 @@
 				"run",
 				"clean-dist"
 			]
-		},
-		{
-			"label": "test file",
-			"type": "shell",
-			"command": "npm",
-			"args": [
-				"run",
-				"test",
-				"${file}"
-			],
-			"group": "test",
-			"problemMatcher": "$jasmine"
 		}
 	]
 }

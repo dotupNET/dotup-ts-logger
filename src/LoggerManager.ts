@@ -1,6 +1,6 @@
-import { ILogWriter } from "./ILogWriter";
 import { LogEntry } from "./LogEntry";
 import { LogLevel } from "./LogLevelEnum";
+import { ILogWriter } from './writer/ILogWriter';
 
 export class LoggerManager {
 
@@ -33,7 +33,7 @@ export class LoggerManager {
     LoggerManager.LogWriter.push(logger);
   }
 
-  public DetachLogWriter(logger: ILogWriter):void {
+  public DetachLogWriter(logger: ILogWriter): void {
     var index = LoggerManager.LogWriter.indexOf(logger);
     if (index > -1) {
       LoggerManager.LogWriter.splice(index, 1);

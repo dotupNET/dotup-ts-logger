@@ -1,6 +1,6 @@
 {
   "name": "dotup-ts-logger",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Logger interface",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,8 +22,7 @@
   },
   "keywords": [
     "typescript",
-    "library",
-    "template"
+    "logger"
   ],
   "author": "Peter Ullrich",
   "license": "MIT",
@@ -32,15 +31,15 @@
   },
   "homepage": "https://github.com/dotupNET/dotup-ts-logger#readme",
   "devDependencies": {
-    "@types/jasmine": "^3.3.7",
+    "@types/jasmine": "^3.3.9",
     "gh-pages": "^2.0.1",
     "jasmine": "^3.3.1",
     "jasmine-ts": "0.3.0",
-    "ts-node": "^8.0.1",
+    "ts-node": "^8.0.2",
     "jasmine-reporters": "^2.3.2",
     "jasmine-ts-console-reporter": "^3.1.1",
     "rimraf": "^2.6.3",
     "typedoc": "^0.14.2",
-    "typescript": "^3.2.4"
+    "typescript": "^3.3.3333"
   }
 }
