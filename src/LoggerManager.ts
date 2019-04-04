@@ -2,9 +2,14 @@ import { LogEntry } from "./LogEntry";
 import { LogLevel } from "./LogLevelEnum";
 import { ILogWriter } from './writer/ILogWriter';
 
-export class LoggerManager {
+if ((<any>global).dotup === undefined || (<any>global).dotup.LogWriter === undefined)
+  (<any>global).dotup = {
+    LogWriter: new Array<ILogWriter>()
+  };
 
-  static LogWriter: Array<ILogWriter> = new Array<ILogWriter>();
+const LogWriter: ILogWriter[] = (<any>global).dotup.LogWriter;
+
+export class LoggerManager {
 
   //       /* static */ constructor() {
 
@@ -30,13 +35,13 @@ export class LoggerManager {
   // }
 
   public AttachLogWriter(logger: ILogWriter): void {
-    LoggerManager.LogWriter.push(logger);
+    LogWriter.push(logger);
   }
 
   public DetachLogWriter(logger: ILogWriter): void {
-    var index = LoggerManager.LogWriter.indexOf(logger);
+    var index = LogWriter.indexOf(logger);
     if (index > -1) {
-      LoggerManager.LogWriter.splice(index, 1);
+      LogWriter.splice(index, 1);
     }
   }
 
@@ -45,7 +50,7 @@ export class LoggerManager {
   }
 
   public static writeLogEntry(message: LogEntry): void {
-    const writers = LoggerManager.LogWriter.filter(item => {
+    const writers = LogWriter.filter(item => {
       return LoggerManager.IsLevel(item.LogLevel, message.logLevel);
     });
     writers.forEach(element => {
