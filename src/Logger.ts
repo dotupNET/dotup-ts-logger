@@ -16,8 +16,8 @@ export class Logger implements ILogger {
     this.loggingAction = LoggerManager.writeLogEntry;
   }
 
-  public Log(level: LogLevel, message: string, memberName: string, error: Error = null) {
-    let entry = new LogEntry(level, message, this.loggerName);
+  public log(level: LogLevel, message: string, memberName: string, error?: Error) {
+    const entry = new LogEntry(level, message, this.loggerName);
     entry.timeStamp = new Date(Date.now()).toISOString();
     entry.memberName = memberName;
     entry.exception = error;
@@ -25,24 +25,24 @@ export class Logger implements ILogger {
     this.loggingAction(entry);
   }
 
-  public Debug(message: string, memberName: string = ""):void {
-    this.Log(LogLevel.Debug, message, memberName);
+  public debug(message: string, memberName: string = ""): void {
+    this.log(LogLevel.Debug, message, memberName);
   }
 
-  public Error(exception: Error, memberName: string = "") :void{
-    this.Log(LogLevel.Error, exception.message, memberName);
+  public error(exception: Error, memberName: string = ""): void{
+    this.log(LogLevel.Error, exception.message, memberName);
   }
 
-  public Info(message: string, memberName: string = ""):void {
-    this.Log(LogLevel.Info, message, memberName);
+  public info(message: string, memberName: string = ""): void {
+    this.log(LogLevel.Info, message, memberName);
   }
 
-  public Warn(message: string, memberName: string = ""):void{
-    this.Log(LogLevel.Warn, message, memberName);
+  public warn(message: string, memberName: string = ""): void{
+    this.log(LogLevel.Warn, message, memberName);
   }
 
-  public CallInfo(memberName: string, logLevel = LogLevel.Info): void {
-    this.Log(logLevel, '', memberName);
+  public callInfo(memberName: string, logLevel = LogLevel.Info): void {
+    this.log(logLevel, "", memberName);
   }
 
 }

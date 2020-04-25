@@ -1,17 +1,17 @@
-import { CallbackLogWriter } from '../src/writer/CallbackLogWriter';
-import { LogLevel } from '../src/LogLevelEnum';
-import { LogEntry } from '../src/LogEntry';
+import { CallbackLogWriter } from "../src/writer/CallbackLogWriter";
+import { LogLevel } from "../src/LogLevelEnum";
+import { LogEntry } from "../src/LogEntry";
 
-describe('CallbackLogWriter', () => {
+describe("CallbackLogWriter", () => {
 
 
-  it('should create an instance', () => {
+  it("should create an instance", () => {
     const writer = new CallbackLogWriter(entry => {
       expect(entry instanceof LogEntry).toBeTruthy();
-      expect(entry.message).toBe('Nice');
-      expect(entry.context).toBe('No context');
+      expect(entry.message).toBe("Nice");
+      expect(entry.context).toBe("No context");
     });
-    const logEntry = new LogEntry(LogLevel.Info, 'Nice', 'No context');
+    const logEntry = new LogEntry(LogLevel.Info, "Nice", "No context");
 
     writer.Write(logEntry);
   });

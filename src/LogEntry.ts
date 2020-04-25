@@ -16,7 +16,7 @@ export class LogEntry {
 
   timeStamp: string;
 
-  data: Object;
+  data: Record<string, any>;
 
-  exception: Error;
+  exception?: Error;
 }

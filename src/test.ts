@@ -8,7 +8,7 @@ class LoggerTest {
   DoIt() {
 
     const conso = new ConsoleLogWriter();
-    conso.LogLevel = LogLevel.Debug |
+    conso.logLevel = LogLevel.Debug |
       LogLevel.Info |
       LogLevel.Warn |
       LogLevel.Error |
@@ -17,13 +17,13 @@ class LoggerTest {
     const lm = new LoggerManager();
     lm.AttachLogWriter(conso);
 
-    const logger = LoggerFactory.createLogger('test');
+    const logger = LoggerFactory.createLogger("test");
 
-    logger.Debug("DEBBBUUUG");
-    logger.Error(new Error("OHA"));
-    logger.Info('infooooo');
+    logger.debug("DEBBBUUUG");
+    logger.error(new Error("OHA"));
+    logger.info("infooooo");
     // logger.log('');
-    logger.Warn('warning');
+    logger.warn("warning");
 
   }
 

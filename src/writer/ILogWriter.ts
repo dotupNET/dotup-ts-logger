@@ -1,9 +1,9 @@
-import { LogLevel } from '../LogLevelEnum';
-import { LogEntry } from '../LogEntry';
+import { LogLevel } from "../LogLevelEnum";
+import { LogEntry } from "../LogEntry";
 
 export interface ILogWriter {
 
-  LogLevel: LogLevel;
+  logLevel: LogLevel;
 
-  Write(entry: LogEntry): void;
+  write(entry: LogEntry): void;
 }
